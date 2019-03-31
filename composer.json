@@ -1,0 +1,41 @@
+{
+  "name": "pravda1979/yii2-book",
+  "description": "Модуль \"Книги\" для CMF2",
+  "type": "yii2-extension",
+  "version": "1.0.0",
+  "keywords": [
+    "yii2",
+    "extension",
+    "cmf2",
+    "book"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Pravda Aleksei",
+      "email": "pravda.aleksei@gmail.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://packagist.dev-vps.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "yiisoft/yii2": "~2.0.12",
+    "yii2-developer/yii2-system": "~1.0.0",
+    "yii2-developer/yii2-editor": "~2.0.0",
+    "voskobovich/yii2-many-many-behavior": "~3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "pravda1979\\book\\": "src"
+    }
+  }
+}
