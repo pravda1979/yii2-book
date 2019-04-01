@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\SerialColumn'],
                 'id',
                 'title',
-                'annotation:html',
                 [
                     'attribute' => 'authorTitle',
                     'value' => 'author.title',

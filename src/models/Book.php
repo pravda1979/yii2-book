@@ -24,7 +24,6 @@ use voskobovich\behaviors\ManyToManyBehavior;
  * @property string $updatedAt
  *
  * @property Author $author
- * @property Relation[] $relations
  * @property Genre[] $genreRelations
  */
 class Book extends \yii\db\ActiveRecord implements HiddenAttributeInterface
@@ -118,15 +117,8 @@ class Book extends \yii\db\ActiveRecord implements HiddenAttributeInterface
              * virtual property
              */
             'genreIds' => 'Жанры',
+            'authorTitle' => 'Автор',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getRelations()
-    {
-        return $this->hasMany(Relation::className(), ['bookId' => 'id']);
     }
 
     /**
@@ -154,7 +146,7 @@ class Book extends \yii\db\ActiveRecord implements HiddenAttributeInterface
      */
     public function getAuthor()
     {
-        return $this->hasOne(Author::className(), ['id' => 'authorId']);
+        return $this->hasOne(Author::className(), ['id' => 'authorId'])->inverseOf('books');
     }
 
     /**

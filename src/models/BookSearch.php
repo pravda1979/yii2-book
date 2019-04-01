@@ -62,8 +62,6 @@ class BookSearch extends Book
             return $dataProvider;
         }
 
-        \Yii::warning($this->genreIds);
-
         /**
          * Filter by genres
          */
@@ -85,6 +83,14 @@ class BookSearch extends Book
             },
         ]);
         $query->andFilterWhere(['like', Author::tableName() . '.[[title]]', $this->authorTitle]);
+
+        /**
+         * Sort by author
+         */
+        $dataProvider->sort->attributes['authorTitle'] = [
+            'asc' => [Author::tableName() . '.[[title]]' => SORT_ASC],
+            'desc' => [Author::tableName() . '.[[title]]' => SORT_DESC],
+        ];
 
         $query->andFilterWhere([
             Book::tableName() . '.[[id]]' => $this->id,

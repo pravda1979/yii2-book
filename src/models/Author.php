@@ -18,6 +18,8 @@ use krok\extend\traits\HiddenAttributeTrait;
  * @property integer $createdBy
  * @property string $createdAt
  * @property string $updatedAt
+ *
+ * @property Book[] $books
  */
 class Author extends \yii\db\ActiveRecord implements HiddenAttributeInterface
 {
@@ -88,6 +90,14 @@ class Author extends \yii\db\ActiveRecord implements HiddenAttributeInterface
             'createdAt' => 'Создано',
             'updatedAt' => 'Обновлено',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBooks()
+    {
+        return $this->hasMany(Book::className(), ['authorId' => 'id'])->inverseOf('author');
     }
 
     /**

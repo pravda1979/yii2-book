@@ -95,28 +95,22 @@ frontend:
 params:
 
 ```
-    'menu' => [
+'menu' => [
         [
-            'label' => 'Material',
-            'icon' => 'ti-files',
+            'label' => 'Library',
+            'icon' => 'ti-book',
             'items' => [
                 [
                     'label' => 'Book',
-                    'icon' => 'ti-files',
-                    'items' => [
-                        [
-                            'label' => 'Book',
-                            'url' => ['/book/default'],
-                        ],
-                        [
-                            'label' => 'Book Author',
-                            'url' => ['/book/author'],
-                        ],
-                        [
-                            'label' => 'Book Genre',
-                            'url' => ['/book/genre'],
-                        ],
-                    ],
+                    'url' => ['/book/default'],
+                ],
+                [
+                    'label' => 'Book Author',
+                    'url' => ['/book/author'],
+                ],
+                [
+                    'label' => 'Book Genre',
+                    'url' => ['/book/genre'],
                 ],
             ],
         ],
@@ -129,6 +123,7 @@ add translates in file `messages/{lang}/system.php`:
     /**
      * Модуль книг
      */
+    'Library' => 'Библиотека',
     'Book' => 'Книги',
     'Book Author' => 'Авторы',
     'Book Genre' => 'Жанры',
@@ -137,8 +132,7 @@ add translates in file `messages/{lang}/system.php`:
 Замечания, вопросы
 =
 
+* В README модуля news неверно указано как создавать меню. 
 * Если используется Pjax, не работает HiddenColumn в GridView. Вместо Select2 обычный Dropdown. 
 * На "index" страницах не хватает кнопки сброса фильтра по всем полям.
 * На "index" страницах не хватает формы фильтра, чтоб фильтровать одним махом по многим полям, задавать доп. условия, такие как промежуток дат и тд. и т.п.
-  
- 
